@@ -1,0 +1,13 @@
+   services:
+     postgres:
+       image: postgres:16
+       environment:
+         POSTGRES_DB: careerhub
+         POSTGRES_USER: careerhub
+         POSTGRES_PASSWORD: careerhub
+       ports:
+         - "5432:5432"
+       volumes:
+         - pgdata:/var/lib/postgresql/data
+   volumes:
+     pgdata:
