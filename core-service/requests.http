@@ -1,0 +1,32 @@
+### Создать вакансию
+POST http://localhost:8080/api/vacancies
+Content-Type: application/json
+
+{
+  "title": "Junior Java Developer",
+  "description": "Spring Boot, PostgreSQL, Docker",
+  "type": "JOB",
+  "location": "Almaty",
+  "remote": false,
+  "salaryMin": 400000,
+  "salaryMax": 600000
+}
+
+### Список вакансий
+GET http://localhost:8080/api/vacancies?page=0&size=10
+
+### Одна вакансия
+GET http://localhost:8080/api/vacancies/1
+
+### Несуществующая вакансия (ожидаем 404)
+GET http://localhost:8080/api/vacancies/999
+
+### Невалидные данные (ожидаем 400)
+POST http://localhost:8080/api/vacancies
+Content-Type: application/json
+
+{
+  "title": "",
+  "description": "",
+  "type": "JOB"
+}
